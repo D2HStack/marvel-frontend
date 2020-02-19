@@ -15,30 +15,32 @@ import Footer from "./components/Footer.js";
 function App() {
   return (
     <>
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/characters">
-            <Characters></Characters>
-          </Route>
-          {/* <Route path="/characters/:id">
+      <div className="app-container">
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/characters">
+              <Characters></Characters>
+            </Route>
+            {/* <Route path="/characters/:id">
             <Character></Character>
           </Route> */}
-          <Route path="/comics">
-            <Comics></Comics>
-          </Route>
-          {/* <Route path="/comics/:id">
+            <Route path="/comics">
+              <Comics></Comics>
+            </Route>
+            {/* <Route path="/comics/:id">
             <Comic></Comic>
           </Route> */}
-          <Route path="/favorites">
-            <Favorites></Favorites>
-          </Route>
-        </Switch>
-      </Router>
-      <Footer></Footer>
+            <Route path="/favorites">
+              <Favorites></Favorites>
+            </Route>
+          </Switch>
+        </Router>
+        <Footer></Footer>
+      </div>
     </>
   );
 }
