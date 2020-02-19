@@ -1,0 +1,44 @@
+/* HEADER */
+.header-container {
+  width: 100 vw;
+  height: 80px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.header-logo {
+  height: 40px;
+}
+
+.header-nav-container {
+  margin: 10px auto;
+}
+
+.header-nav-link {
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  margin: 0px 20px;
+}
+
+/* FOOTER */
+.footer-container {
+  width: 100 vw;
+  height: 40px;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: white;
+}
