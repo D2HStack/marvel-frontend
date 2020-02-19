@@ -38,8 +38,8 @@ function App() {
               <Favorites></Favorites>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
-        <Footer></Footer>
       </div>
     </>
   );

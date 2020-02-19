@@ -31,26 +31,31 @@ function Characters(props) {
 
   return (
     <>
-      <div className="characters-container">
-        <h1>Marvel Characters List</h1>
-        <div>
-          {isLoading ? (
-            "Please wait for loading ... "
-          ) : (
-            <>
-              <input type="text" placeholder="Search"></input>
-              <p>{characters.count}</p>
+      <div className="characters-bg">
+        {isLoading ? (
+          "Please wait for loading ... "
+        ) : (
+          <div className="characters-container">
+            <div className="characters-text-container">
+              <h1>Marvel Characters List</h1>
+              <input
+                className="characters-search"
+                type="text"
+                placeholder="Search"
+              ></input>
+              <p className="characters-count">{characters.count} results</p>
+            </div>
+
+            <div className="characters-list-wrap">
               {characters.results.map((character, index) => (
                 <CharacterItem
                   key={character.id}
                   {...character}
                 ></CharacterItem>
               ))}
-
-              <CharacterItem {...characters.results[0]}></CharacterItem>
-            </>
-          )}
-        </div>
+            </div>
+          </div>
+        )}
       </div>
       <Helmet>
         <meta charSet="utf-8" />

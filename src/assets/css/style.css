@@ -1,7 +1,16 @@
+/* GENERAL */
+h1 {
+  font-size: 26px;
+  font-weight: bolder;
+  line-height: 26px;
+  color: #202020;
+}
+
 /* APP */
 .app-container {
   /* display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center; */
 }
 
@@ -30,6 +39,11 @@
   color: white;
   font-weight: bold;
   margin: 0px 20px;
+  text-decoration: none;
+}
+
+.header-nav-link:hover {
+  text-decoration: underline;
 }
 
 /* FOOTER */
@@ -46,14 +60,114 @@
 }
 
 .footer-text {
+  width: 100 vw;
   font-size: 12px;
   color: white;
 }
 
 /* CHARACTERS */
 
+.characters-bg {
+  width: 100vw;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 0;
+}
+
 .characters-container {
-  width: 1000px;
-  background-color: aqua;
-  height: 800px;
+  /* display: flex; */
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.characters-text-container {
+  padding-left: 10px;
+}
+
+.characters-search {
+  margin: 10px 0;
+  border-radius: 3px;
+  line-height: 40px;
+  padding: 0 10px;
+  width: 600px;
+  font-size: 16px;
+  color: #f0f0f0;
+  box-shadow: 2px 2px 5px #808484;
+  border: none;
+}
+
+.characters-count {
+  font-size: 12px;
+  color: #999999;
+}
+
+.characters-list-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* width: 1200px; */
+  /* background-color: brown; */
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* CHARACTER-ITEM */
+
+.character-item-link {
+  text-decoration: none;
+}
+
+.character-item-container {
+  width: 150px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  margin: 10px;
+
+  box-shadow: 3px 3px 5px #808484;
+}
+
+.character-item-container:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.character-item-image {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.character-item-content {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.character-item-name {
+  font-size: 14px;
+  line-height: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+.character-item-description {
+  font-size: 12px;
+  line-height: 14px;
+  color: #808484;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  height: 85px;
+}
+
+.character-item-hr {
+  border: solid 2px red;
+  margin: 0;
 }
