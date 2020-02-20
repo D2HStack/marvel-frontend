@@ -32,7 +32,7 @@ function Characters(props) {
   };
 
   //"http://localhost:4000/characters/"; //`https://marvel-api-hd.herokuapp.com/characters/`;
-  const limit = 30;
+  const limit = 25;
   const total = characters.total;
   let url = `https://marvel-api-hd.herokuapp.com/characters`;
 

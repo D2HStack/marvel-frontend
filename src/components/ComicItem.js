@@ -10,20 +10,18 @@ function ComicItem({ id, title, description, thumbnail }) {
 
   return (
     <>
-      <Link className="comic-item-link" to={comicCardPath}>
-        <div className="comic-item-container">
-          <img
-            className="comic-item-image"
-            alt={`${title} thumbnail`}
-            src={imagePath}
-          ></img>
-          <hr className="comic-item-hr"></hr>
-          <div className="comic-item-content">
-            <p className="comic-item-title">{title}</p>
-            <p className="comic-item-description">{description}</p>
-          </div>
+      <div className="comic-item-container">
+        <img
+          className="comic-item-image"
+          alt={`${title} thumbnail`}
+          src={imagePath}
+        ></img>
+        <hr className="comic-item-hr"></hr>
+        <div className="comic-item-content">
+          <p className="comic-item-title">{title}</p>
+          <p className="comic-item-description">{description}</p>
         </div>
-      </Link>
+      </div>
     </>
   );
 }

@@ -37,12 +37,12 @@ function Comics(props) {
     url = `https://marvel-api-hd.herokuapp.com/comics/search/${keyword}`;
   }
   //"http://localhost:4000/comics/"; //`https://marvel-api-hd.herokuapp.com/comics/`;
-  const limit = 100;
+  const limit = 50;
   const total = comics.total;
 
   useEffect(() => {
     fetchData(url, offset, limit);
-  }, [offset]);
+  }, [offset, searchOn]);
 
   return (
     <>
@@ -56,7 +56,6 @@ function Comics(props) {
               <form
                 onSubmit={event => {
                   event.preventDefault();
-                  console.log("submit");
                   setSearchOn(true);
                 }}
               >
