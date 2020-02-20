@@ -93,7 +93,7 @@ h1 {
   padding: 0 10px;
   width: 600px;
   font-size: 16px;
-  color: #f0f0f0;
+  color: #999999;
   box-shadow: 2px 2px 5px #808484;
   border: none;
 }
@@ -109,8 +109,13 @@ h1 {
   flex-wrap: wrap;
   /* width: 1200px; */
   /* background-color: brown; */
-  justify-content: center;
+  justify-content: left;
   margin: 20px 0;
+}
+
+.characters-pagination-container {
+  display: flex;
+  justify-content: center;
 }
 
 /* CHARACTER-ITEM */
@@ -170,4 +175,21 @@ h1 {
 .character-item-hr {
   border: solid 2px red;
   margin: 0;
+}
+
+/* PAGINATION */
+
+.pagination-container {
+  color: #336699;
+}
+
+.pagination-item {
+  font-size: 14px;
+  margin: 10px;
+}
+
+.pagination-item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
 }

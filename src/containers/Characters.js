@@ -4,18 +4,19 @@ import { Helmet } from "react-helmet";
 
 // import component
 import CharacterItem from "../components/CharacterItem";
+import Pagination from "../components/Pagination";
 
 function Characters(props) {
-  const offset = 0;
-  const limit = 10;
-
   const [isLoading, setIsLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const [startPage, setStartPage] = useState(1);
 
+  // Loading the characters item
   const fetchData = async (uri, offset, limit) => {
     try {
-      const response = await axios.get(uri, { offset: 0, limit: 5 });
-      console.log("response characters", response.data);
+      const response = await axios.post(uri, { offset, limit });
+      // console.log("response characters", response.data);
       setCharacters(response.data);
       setIsLoading(false);
     } catch (err) {
@@ -23,11 +24,13 @@ function Characters(props) {
     }
   };
 
-  const uri = `https://marvel-api-hd.herokuapp.com/characters/all`;
+  const uri = `https://marvel-api-hd.herokuapp.com/characters/`; //"http://localhost:4000/characters/";
+  const limit = 30;
+  const total = characters.total;
 
   useEffect(() => {
     fetchData(uri, offset, limit);
-  }, []);
+  }, [offset]);
 
   return (
     <>
@@ -43,7 +46,7 @@ function Characters(props) {
                 type="text"
                 placeholder="Search"
               ></input>
-              <p className="characters-count">{characters.count} results</p>
+              <p className="characters-count">{total} results</p>
             </div>
 
             <div className="characters-list-wrap">
@@ -53,6 +56,18 @@ function Characters(props) {
                   {...character}
                 ></CharacterItem>
               ))}
+            </div>
+            <div className="characters-pagination-container">
+              <Pagination
+                offset={offset}
+                setOffset={setOffset}
+                total={total}
+                limit={limit}
+                isLoading={isLoading}
+                setIsLoading={setIsLoading}
+                startPage={startPage}
+                setStartPage={setStartPage}
+              ></Pagination>
             </div>
           </div>
         )}
