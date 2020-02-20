@@ -13,23 +13,29 @@ function Characters(props) {
   const [startPage, setStartPage] = useState(1);
 
   // Loading the characters item
-  const fetchData = async (uri, offset, limit) => {
+  const fetchData = async (url, offset, limit) => {
     try {
-      const response = await axios.post(uri, { offset, limit });
+      const response = await axios({
+        url,
+        method: "get",
+        params: { offset, limit }
+      });
+      //const response = await axios.post(url, { offset, limit });
       // console.log("response characters", response.data);
       setCharacters(response.data);
       setIsLoading(false);
     } catch (err) {
-      alert("An error occurred");
+      alert("An error occurred", err);
     }
   };
 
-  const uri = `https://marvel-api-hd.herokuapp.com/characters/`; //"http://localhost:4000/characters/";
+  const url = `https://marvel-api-hd.herokuapp.com/characters/`;
+  //"http://localhost:4000/characters/"; //`https://marvel-api-hd.herokuapp.com/characters/`;
   const limit = 30;
   const total = characters.total;
 
   useEffect(() => {
-    fetchData(uri, offset, limit);
+    fetchData(url, offset, limit);
   }, [offset]);
 
   return (
