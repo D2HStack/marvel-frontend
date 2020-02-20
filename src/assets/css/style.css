@@ -313,6 +313,12 @@ h1 {
   box-shadow: 3px 3px 5px #808484;
 }
 
+.favorite {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+}
+
 .character-item-container:hover {
   background-color: red;
   cursor: pointer;
@@ -327,7 +333,6 @@ h1 {
 .character-item-content {
   width: 150px;
   height: 150px;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -338,6 +343,7 @@ h1 {
   line-height: 16px;
   color: white;
   font-weight: bold;
+  padding: 0 10px 0 5px;
 }
 
 .character-item-description {
@@ -348,6 +354,7 @@ h1 {
   word-wrap: break-word;
   overflow: hidden;
   height: 85px;
+  padding: 0 10px 0 5px;
 }
 
 .character-item-hr {
@@ -366,7 +373,7 @@ h1 {
   height: 350px;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: white;
   margin: 10px;
 
   box-shadow: 3px 3px 5px #808484;
@@ -386,7 +393,7 @@ h1 {
 .comic-item-content {
   width: 150px;
   height: 150px;
-  padding: 10px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -395,8 +402,11 @@ h1 {
 .comic-item-title {
   font-size: 14px;
   line-height: 16px;
-  color: white;
+  color: #262626;
   font-weight: bold;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  padding: 0 10px 0 5px;
 }
 
 .comic-item-description {
@@ -407,6 +417,7 @@ h1 {
   word-wrap: break-word;
   overflow: hidden;
   height: 85px;
+  padding: 0 10px 0 5px;
 }
 
 .comic-item-hr {

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 
+import ComicItem from "../components/ComicItem";
 import CharacterItem from "../components/CharacterItem";
 
 function CharacterCard(props) {
@@ -65,7 +66,7 @@ function CharacterCard(props) {
               </div>
               <div className="character-card-list-wrap">
                 {comics.map((comic, index) => (
-                  <CharacterItem key={comic.id} {...comic}></CharacterItem>
+                  <ComicItem key={comic.id} {...comic}></ComicItem>
                 ))}
               </div>
             </div>
