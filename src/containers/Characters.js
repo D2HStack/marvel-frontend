@@ -11,6 +11,8 @@ function Characters(props) {
   const [characters, setCharacters] = useState([]);
   const [offset, setOffset] = useState(0);
   const [startPage, setStartPage] = useState(1);
+  const [keyword, setKeyword] = useState("");
+  const [searchOn, setSearchOn] = useState(false);
 
   // Loading the characters item
   const fetchData = async (url, offset, limit) => {
@@ -29,14 +31,18 @@ function Characters(props) {
     }
   };
 
-  const url = `https://marvel-api-hd.herokuapp.com/characters/`;
   //"http://localhost:4000/characters/"; //`https://marvel-api-hd.herokuapp.com/characters/`;
   const limit = 30;
   const total = characters.total;
+  let url = `https://marvel-api-hd.herokuapp.com/characters`;
+
+  if (searchOn) {
+    url = `https://marvel-api-hd.herokuapp.com/characters/search/${keyword}`;
+  }
 
   useEffect(() => {
     fetchData(url, offset, limit);
-  }, [offset]);
+  }, [offset, searchOn]);
 
   return (
     <>
@@ -47,11 +53,26 @@ function Characters(props) {
           <div className="characters-container">
             <div className="characters-text-container">
               <h1>Marvel Characters List</h1>
-              <input
-                className="characters-search"
-                type="text"
-                placeholder="Search"
-              ></input>
+              <form
+                onSubmit={event => {
+                  event.preventDefault();
+                  setSearchOn(true);
+                }}
+              >
+                <input
+                  className="characters-search"
+                  type="text"
+                  placeholder="Search"
+                  value={keyword}
+                  onChange={event => {
+                    setSearchOn(false);
+                    setKeyword(event.target.value);
+                  }}
+                ></input>
+                <button className="characters-search-button" type="submit">
+                  Let's Go !{" "}
+                </button>
+              </form>
               <p className="characters-count">{total} results</p>
             </div>
 

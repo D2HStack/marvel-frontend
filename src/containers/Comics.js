@@ -11,6 +11,8 @@ function Comics(props) {
   const [comics, setComics] = useState([]);
   const [offset, setOffset] = useState(0);
   const [startPage, setStartPage] = useState(1);
+  const [keyword, setKeyword] = useState("");
+  const [searchOn, setSearchOn] = useState(false);
 
   // Loading the comics item
   const fetchData = async (url, offset, limit) => {
@@ -29,7 +31,11 @@ function Comics(props) {
     }
   };
 
-  const url = `https://marvel-api-hd.herokuapp.com/comics/`;
+  let url = `https://marvel-api-hd.herokuapp.com/comics`;
+
+  if (searchOn) {
+    url = `https://marvel-api-hd.herokuapp.com/comics/search/${keyword}`;
+  }
   //"http://localhost:4000/comics/"; //`https://marvel-api-hd.herokuapp.com/comics/`;
   const limit = 100;
   const total = comics.total;
@@ -47,11 +53,27 @@ function Comics(props) {
           <div className="comics-container">
             <div className="comics-text-container">
               <h1>Marvel comics List</h1>
-              <input
-                className="comics-search"
-                type="text"
-                placeholder="Search"
-              ></input>
+              <form
+                onSubmit={event => {
+                  event.preventDefault();
+                  console.log("submit");
+                  setSearchOn(true);
+                }}
+              >
+                <input
+                  className="characters-search"
+                  type="text"
+                  placeholder="Search"
+                  value={keyword}
+                  onChange={event => {
+                    setSearchOn(false);
+                    setKeyword(event.target.value);
+                  }}
+                ></input>
+                <button className="characters-search-button" type="submit">
+                  Let's Go !{" "}
+                </button>
+              </form>
               <p className="comics-count">{total} results</p>
             </div>
 
