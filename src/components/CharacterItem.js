@@ -6,9 +6,11 @@ function CharacterItem({ id, name, description, thumbnail }) {
   const imagePath =
     thumbnail.path + "/" + "portrait_medium" + "." + thumbnail.extension;
 
+  const characterCardPath = "/characters/" + id;
+
   return (
     <>
-      <Link className="character-item-link" to="/characters/:id">
+      <Link className="character-item-link" to={characterCardPath}>
         <div className="character-item-container">
           <img
             className="character-item-image"

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import routes from containers
 import Home from "./containers/Home";
 import Characters from "./containers/Characters";
+import CharacterCard from "./containers/CharacterCard";
 import Comics from "./containers/Comics";
 import Favorites from "./containers/Favorites";
 
@@ -22,12 +23,12 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
-            <Route path="/characters">
+            <Route exact path="/characters">
               <Characters></Characters>
             </Route>
-            {/* <Route path="/characters/:id">
-            <Character></Character>
-          </Route> */}
+            <Route path="/characters/:id">
+              <CharacterCard></CharacterCard>
+            </Route>
             <Route path="/comics">
               <Comics></Comics>
             </Route>

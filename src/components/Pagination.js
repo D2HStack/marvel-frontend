@@ -12,9 +12,6 @@ function Pagination({
 }) {
   const maxPages = 20;
   const numPages = Math.ceil(total / limit);
-  console.log("numPages", numPages);
-  console.log("startPage", startPage);
-  console.log("offset", offset);
 
   const createPaginationTable = count => {
     let tab = [];
