@@ -22,8 +22,6 @@ function Comics(props) {
         method: "get",
         params: { offset, limit }
       });
-      //const response = await axios.post(url, { offset, limit });
-      // console.log("response comics", response.data);
       setComics(response.data);
       setIsLoading(false);
     } catch (err) {
@@ -36,7 +34,6 @@ function Comics(props) {
   if (searchOn) {
     url = `https://marvel-api-hd.herokuapp.com/comics/search/${keyword}`;
   }
-  //"http://localhost:4000/comics/"; //`https://marvel-api-hd.herokuapp.com/comics/`;
   const limit = 50;
   const total = comics.total;
 

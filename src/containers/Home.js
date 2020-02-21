@@ -29,8 +29,6 @@ function Home(props) {
         method: "get",
         params: { offset, limit }
       });
-      //const response = await axios.post(url, { offset, limit });
-      // console.log("response characters", response.data);
       setCharacters(response.data);
       setIsLoading(false);
     } catch (err) {
@@ -38,7 +36,6 @@ function Home(props) {
     }
   };
 
-  //"http://localhost:4000/characters/"; //`https://marvel-api-hd.herokuapp.com/characters/`;
   const limit = 7;
   const total = characters.total;
   let url = `https://marvel-api-hd.herokuapp.com/characters`;

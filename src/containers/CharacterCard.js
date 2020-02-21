@@ -38,15 +38,12 @@ function CharacterCard(props) {
   };
 
   const url = `https://marvel-api-hd.herokuapp.com/characters/${id}`;
-  //"http://localhost:4000/characters/"; //`https://marvel-api-hd.herokuapp.com/characters/`;
+
   const limit = 30;
 
   useEffect(() => {
     fetchData(url, offset, limit);
   }, []);
-
-  // console.log(" character complete", character);
-  // const { name, description, thumbnail } = character;
 
   return (
     <>
